@@ -1,0 +1,30 @@
+.Profile {
+    display: flex;
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.Profile .name {
+    margin: 0;
+}
+
+.Profile .info {
+    margin-left: 20px;
+    text-align: left;
+}
+
+.created {
+    font-size: 0.875rem;
+    color: rgba(0, 0, 0, 0.54); 
+}
+.Profile .large {
+    width: 100px;
+    height: 100px;
+}
+
+.loading {
+    text-align: center;
+}

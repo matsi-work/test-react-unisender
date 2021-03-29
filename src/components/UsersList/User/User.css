@@ -1,0 +1,20 @@
+.User {
+    border-top: 1px solid grey;
+}
+.User ul {
+    padding: 0;
+}
+
+.User li > div {
+    padding: 20px 10px;
+}
+
+.User:first-child {
+    border: none;
+}
+
+.User .large {
+    width: 50px;
+    height: 50px;
+    margin-right: 40px;
+}
