@@ -5,7 +5,7 @@ import { UsersList } from './components/UsersList';
 
 function App() {
     if (!localStorage.getItem('page_id')) {
-        localStorage.setItem('page_id', String(1))
+        localStorage.setItem('page_id', String(1));
     }
     return (
         <Router>

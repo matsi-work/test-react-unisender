@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './UserList.css'
-
-import Pagination from '@material-ui/lab/Pagination';
 import { useFetchUsers } from '../api/useFetchUsers';
-import {User} from './User/User';
+import { User } from './User/User';
 import { useHistory } from 'react-router';
+import Pagination from '@material-ui/lab/Pagination';
 
-const UsersList = () => {
+const Users = () => {
     const [page, setPage] = useState(Number(localStorage.getItem('page_id')));
     const { users, loading, error } = useFetchUsers(page);
     const history = useHistory();
@@ -38,4 +37,4 @@ const UsersList = () => {
     )
 }
 
-export {UsersList};
+export const UsersList = React.memo(Users);

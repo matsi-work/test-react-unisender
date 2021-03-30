@@ -1,9 +1,10 @@
 import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
+import './Profile.css';
 import { useHistory } from 'react-router-dom';
 import { useFetchUsers } from '../api/useFetchUsers';
-import './Profile.css';
 import { getDateFormat } from '../utils/getDateFormat';
+import Avatar from '@material-ui/core/Avatar';
+
 
 const ProfileList = () => {
     const history: any = useHistory();

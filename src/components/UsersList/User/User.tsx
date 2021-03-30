@@ -1,5 +1,6 @@
 import React from 'react';
 import './User.css';
+import { useHistory } from 'react-router-dom';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
@@ -8,7 +9,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
-import { useHistory } from 'react-router-dom';
 
 interface UserListI {
   avatar: string;
@@ -31,11 +31,9 @@ const UserData = ({avatar, url, login} : UserListI) => {
                   <ListItemAvatar>
                       <Avatar className="large" alt={login} src={avatar}/>
                   </ListItemAvatar>
-                  <ListItemText
-                    primary={login}
-                  />
+                  <ListItemText primary={login}/>
                   <ListItemSecondaryAction>
-                    <Link href={url} target="_blank" underline="none" >
+                    <Link href={url} target="_blank" underline="none">
                         <Button variant="outlined">View on GitHub</Button>
                     </Link>
                   </ListItemSecondaryAction>
@@ -45,4 +43,4 @@ const UserData = ({avatar, url, login} : UserListI) => {
     )
 }
 
-export const User = React.memo(UserData)
+export const User = React.memo(UserData);
