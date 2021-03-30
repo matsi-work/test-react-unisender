@@ -1,46 +1,30 @@
-# Getting Started with Create React App
+# Руководство по запуску проекта
+## Начало работы
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1) На первом шаге мы выкачиваем репозиторий:
 
-## Available Scripts
+### `git clone https://github.com/matsi-work/test-react-unisender.git`
 
-In the project directory, you can run:
+2) Потом необходимо установить все зависимости, для это переходим в корень нашего проекта и делаем:
 
-### `yarn start`
+**Пакетный менеджер зависит от вас, я предпочитаю с реактом yarn**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `npm install` или `yarn install`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+3) Теперь все готово к запуску, можно использовать команду:
 
-### `yarn test`
+### `npm start` или `yarn start`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Описание проекта
 
-### `yarn build`
+Для этого тестового задания, я использовал обычную структуру файлов т.к. компонентов почти нету. В каждом компоненте я использую точку входа это файл **index.ts**, мы так делаем на проектах и это удобно при импортах. По стилям требований не было, не стал использовать препроцессор, добавил для каждого компонента ***.css** и дополнил свою стилизации. В помощь с верткой я использовал библиотеку **material-ui**. В проекте присутствует утилита, там находится функция **getDateFormat** - которая меняет вид даты. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Про **redux**, его я не стал использовать тут, я как разработчик всегда забочусь о производительности и не стал нагружать это приложение лишними библиотеками. В директории **api** вы найдете кастомный хук, с помощью которого я обращаюсь к **github api**. Там же и мой **условный стор** для приложения. Принцип тот же, просто редьюсер, экшены и стейт находятся в одном файле. Также обернул компоненты в **React.memo**.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Мне нравится использовать в своей работе **TypeScript**, поэтому для типизации приложения я его тут применил.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Про сложности
 
-### `yarn eject`
+Проект не смог запуститься **Stackblitz** т.к. он упорно искал точку входа в виде файла **index.js**, а он у меня **index.tsx**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Также мне было необходимо чтобы приложение открывалось с урлом [http://localhost:3000/page/1](http://localhost:3000/page/1), т.к. пагинация уже активирована на первой странице, можно конечно использовать **homepage** в **package.json** для установки домашней страницы, но тогда возникает проблема шаринга приложения в других сервисах. Я использовал компонент **redirect**. Мне интересно как это вы делаете.
