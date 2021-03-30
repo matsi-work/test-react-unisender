@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { Profile } from './components/Profile';
 import { UsersList } from './components/UsersList';
 
@@ -10,6 +10,7 @@ function App() {
     return (
         <Router>
             <Switch>
+                <Route exact path="/" component={() => (<Redirect to='/page/1' />)} />
                 <Route exact path="/page/:id">
                     <UsersList />
                 </Route>
