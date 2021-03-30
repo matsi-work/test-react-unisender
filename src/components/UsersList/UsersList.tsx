@@ -7,7 +7,7 @@ import {User} from './User/User';
 import { useHistory } from 'react-router';
 
 const UsersList = () => {
-    const [page, setPage] = useState(Number(localStorage.getItem('page_id')))
+    const [page, setPage] = useState(Number(localStorage.getItem('page_id')));
     const { users, loading, error } = useFetchUsers(page);
     const history = useHistory();
 
