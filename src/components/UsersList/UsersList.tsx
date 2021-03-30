@@ -5,7 +5,7 @@ import { User } from './User/User';
 import { useHistory } from 'react-router';
 import Pagination from '@material-ui/lab/Pagination';
 
-const Users = () => {
+const Users = ({defaultPage} : any) => {
     const [page, setPage] = useState(Number(localStorage.getItem('page_id')));
     const { users, loading, error } = useFetchUsers(page);
     const history = useHistory();
@@ -13,7 +13,7 @@ const Users = () => {
     useEffect(() => {
         history.push('/page/' + page);
         localStorage.setItem('page_id', String(page));
-    }, [history, page])
+    }, [history, page]);
 
     return (
         <div className="UsersListBlock">
@@ -30,7 +30,7 @@ const Users = () => {
                 hidePrevButton={true}
                 onChange={(_, page: number) => setPage(page)}
                 count={4}
-                defaultPage={Number(localStorage.getItem('page_id'))}
+                defaultPage={Number(defaultPage)}
                 variant="outlined"
             />
         </div>

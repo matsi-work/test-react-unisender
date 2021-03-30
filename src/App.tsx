@@ -12,7 +12,7 @@ function App() {
             <Switch>
                 <Route exact path="/" component={() => (<Redirect to='/page/1' />)} />
                 <Route exact path="/page/:id">
-                    <UsersList />
+                    <UsersList defaultPage={localStorage.getItem('page_id')} />
                 </Route>
                 <Route path="/profile/:login">
                     <Profile />
